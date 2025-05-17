@@ -1,0 +1,21 @@
+services:
+  generator-base: &generator-base
+    image: openapitools/openapi-generator-cli
+    volumes:
+      - .:/local
+    environment:
+      - OPENAPI_BASE_URL
+  generator-transaction:
+    <<: *generator-base
+    command: >
+      generate -g go --package-name transaction -o "/local/transaction" -i "${OPENAPI_BASE_URL}/api/transaction/openapi.json"
+
+  generator-meta:
+    <<: *generator-base
+    command: >
+      generate -g go --package-name meta -o "/local/meta" -i "${OPENAPI_BASE_URL}/api/meta/openapi.json"
+
+  generator-registry:
+    <<: *generator-base
+    command: >
+      generate -g go --package-name registry -o "/local/registry" -i "${OPENAPI_BASE_URL}/api/registry/openapi.json"

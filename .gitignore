@@ -1,0 +1,35 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, build output
+*.test
+/build/
+/dist/
+/bin/
+
+# Go modules
+/go.sum
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+
+/*/test
+/*/docs
+/*/api
+/*/.openapi-generator
+/*/.travis.yml
+/*/.openapi-generator-ignore
+/*/git_push.sh
